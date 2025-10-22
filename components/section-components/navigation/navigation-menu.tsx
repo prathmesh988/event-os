@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/shared/ui/button";
+import { gaps } from "@/constants";
 
 interface NavMenuItem {
   label: string;
@@ -48,8 +49,8 @@ export function NavigationMenu({
     <nav
       className={`${
         isMobile
-          ? "flex flex-col space-y-2"
-          : "hidden md:flex items-center space-x-1"
+          ? `flex flex-col ${gaps.element.tight}`
+          : `hidden md:flex items-center ${gaps.element.tight}`
       }`}
     >
       {navigationItems.map((item) => (

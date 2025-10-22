@@ -5,6 +5,7 @@ import {
   CardTitle,
 } from "@/components/shared/ui/card";
 import { type EventItem } from "@/utils/events/events-data";
+import { gaps, typography } from "@/constants";
 
 interface EventCardProps {
   event: EventItem;
@@ -37,11 +38,13 @@ export function EventCard({ event, style }: EventCardProps) {
           />
         </div>
         <CardHeader>
-          <CardTitle className="text-lg">{event.title}</CardTitle>
+          <CardTitle className={typography.body.lg}>{event.title}</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-muted-foreground">{event.caption}</p>
-          <p className="mt-2 text-xs">
+          <p className={`${typography.body.sm} text-muted-foreground`}>
+            {event.caption}
+          </p>
+          <p className={`mt-2 ${typography.body.xs}`}>
             See more →{" "}
             <a
               href="https://instagram.com/"

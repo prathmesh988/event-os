@@ -6,6 +6,13 @@ import { NavigationMenu } from "./navigation-menu";
 import { ThemeToggle } from "./theme-toggle";
 import { MobileMenu } from "./mobile-menu";
 import { Calendar, Sparkles } from "lucide-react";
+import {
+  buttonSizes,
+  iconSizes,
+  gaps,
+  typography,
+  responsiveSpacing,
+} from "@/constants";
 
 export function TopBar() {
   const { scrollDirection, isScrolled } = useScrollDirection();
@@ -19,39 +26,49 @@ export function TopBar() {
       }`}
     >
       <div
-        className={`transition-all duration-300 ease-out ${
-          isScrolled
-            ? "bg-background/80 backdrop-blur-lg border-b shadow-lg"
-            : "bg-transparent"
-        }`}
+        className={`transition-all duration-300 ease-out ${"bg-background/80 backdrop-blur-lg border-b shadow-lg"}`}
       >
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
+        <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
+          <div className="flex items-center justify-between min-h-[64px] py-2">
             {/* Animated Logo */}
-            <div className="flex items-center space-x-2 group cursor-pointer">
+            <div
+              className={`flex items-center ${gaps.element.normal} group cursor-pointer ${buttonSizes.touchTarget.minimum} py-2`}
+            >
               <div
-                className={`w-8 h-8 bg-gradient-to-r from-primary to-primary/80 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 ${
+                className={`${
+                  iconSizes.responsive.lg
+                } bg-gradient-to-r from-primary to-primary/80 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 ${
                   isScrolled ? "shadow-md" : "shadow-lg"
                 }`}
               >
-                <Calendar className="h-5 w-5 text-primary-foreground" />
+                <Calendar
+                  className={`${iconSizes.md} text-primary-foreground`}
+                />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-primary via-primary/90 to-primary/80 bg-clip-text text-transparent">
+              <span
+                className={`${typography.body.lg} ${typography.weight.bold} bg-gradient-to-r from-primary via-primary/90 to-primary/80 bg-clip-text text-transparent`}
+              >
                 EventPro
               </span>
-              <Sparkles className="h-4 w-4 text-primary opacity-70 group-hover:opacity-100 transition-opacity" />
+              <Sparkles
+                className={`${iconSizes.responsive.sm} text-primary opacity-70 group-hover:opacity-100 transition-opacity`}
+              />
             </div>
 
             {/* Desktop Navigation */}
-            <div className="flex items-center space-x-4">
+            <div className={`flex items-center ${gaps.responsive.md}`}>
               <NavigationMenu />
 
               {/* Enhanced CTA Button */}
               <Button
-                size="sm"
-                className="hidden md:flex group relative overflow-hidden bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300"
+                size="default"
+                className={`hidden md:flex group relative overflow-hidden ${buttonSizes.sizes.md} bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300`}
               >
-                <span className="relative z-10">Book Event</span>
+                <span
+                  className={`relative z-10 ${typography.body.base} ${typography.weight.medium}`}
+                >
+                  Book Event
+                </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Button>
 

@@ -12,6 +12,7 @@ import {
 import { BookingSectionHeader } from "./booking-section-header";
 import { BookingFormFields } from "./booking-form-fields";
 import { BookingSubmitButton } from "./booking-submit-button";
+import { gaps } from "@/constants";
 
 export function BookingForm() {
   const { toast } = useToast();
@@ -56,7 +57,7 @@ export function BookingForm() {
       <CardContent>
         <form
           action={onSubmit}
-          className="grid gap-4 md:grid-cols-2"
+          className={`grid ${gaps.element.comfortable} md:grid-cols-2`}
           aria-label="Booking form"
         >
           <BookingFormFields />

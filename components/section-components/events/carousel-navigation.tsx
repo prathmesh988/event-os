@@ -1,3 +1,5 @@
+import { gaps } from "@/constants";
+
 interface CarouselNavigationProps {
   totalItems: number;
   activeIndex: number;
@@ -10,7 +12,7 @@ export function CarouselNavigation({
   onIndexChange,
 }: CarouselNavigationProps) {
   return (
-    <div className="flex justify-center gap-2 mt-8">
+    <div className={`flex justify-center ${gaps.element.tight} mt-8`}>
       {Array.from({ length: totalItems }).map((_, index) => (
         <button
           key={index}

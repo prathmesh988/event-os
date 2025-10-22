@@ -13,30 +13,40 @@ import { BookingCalendarHero } from "@/components/section-components/booking/boo
 import { TopBar } from "@/components/section-components/navigation/top-bar";
 import { EnhancedWaveTransition } from "@/components/shared/enhanced-wave-transition";
 import FixedVideoBackground from "@/components/shared/fixed-video-background";
+import { responsiveSpacing, components, containers } from "@/constants";
 
 export default function Page() {
   return (
     <main className="relative min-h-screen bg-black">
+      {/* Fixed Video Background for parallax effect across entire page */}
       <FixedVideoBackground />
+
       {/* Navigation */}
       <div className="relative z-50">
         <TopBar />
       </div>
 
-      <div className="relative z-10 pt-16">
+      {/* Hero Section with proper spacing */}
+      <div className="relative z-10">
         <Hero />
       </div>
+
+      {/* Main Featured Section */}
       <div className="relative z-10">
         <BookingCalendarHero />
       </div>
 
-      <section id="events" className="relative z-10 bg-background py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+      {/* Events Section with improved spacing */}
+      <section
+        id="events"
+        className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
+      >
+        <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
+          <div className={components.sectionHeader.container}>
+            <h2 className={components.sectionHeader.title}>
               Our Amazing Events
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className={components.sectionHeader.description}>
               Discover the magic we create
             </p>
           </div>
@@ -44,16 +54,15 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Wave Transition */}
-
-      {/* Packages Section */}
-      <section id="packages" className="relative z-10 bg-background py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Event Packages
-            </h2>
-            <p className="text-xl text-muted-foreground">
+      {/* Packages Section with improved spacing */}
+      <section
+        id="packages"
+        className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
+      >
+        <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
+          <div className={components.sectionHeader.container}>
+            <h2 className={components.sectionHeader.title}>Event Packages</h2>
+            <p className={components.sectionHeader.description}>
               Perfect plans for every celebration
             </p>
           </div>
@@ -61,35 +70,40 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Wave Transition */}
-
-      {/* Booking Section */}
-      <section id="booking" className="relative z-10 bg-background py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Book Your Event
-            </h2>
-            <p className="text-xl text-muted-foreground">
+      {/* Booking Section with improved spacing */}
+      <section
+        id="booking"
+        className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
+      >
+        <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
+          <div className={components.sectionHeader.container}>
+            <h2 className={components.sectionHeader.title}>Book Your Event</h2>
+            <p className={components.sectionHeader.description}>
               Let's make your dream event reality
             </p>
           </div>
-          <div className="max-w-4xl mx-auto">
+          <div className={`${containers.xl} mx-auto`}>
             <BookingForm />
           </div>
         </div>
       </section>
+
+      {/* Wave Transition */}
       <EnhancedWaveTransition />
 
-      {/* Calendar Section with Video Background */}
-      <section className="relative z-10 overflow-hidden min-h-screen flex items-center justify-center py-20">
+      {/* Calendar Section with improved spacing */}
+      <section
+        className={`relative z-10 overflow-hidden min-h-screen flex items-center justify-center ${responsiveSpacing.sectionY}`}
+      >
         <div className="absolute inset-0 bg-black/50 z-0" />
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg">
+        <div
+          className={`relative z-10 container mx-auto ${responsiveSpacing.containerX}`}
+        >
+          <div className={components.sectionHeader.container}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg">
               Check Availability
             </h2>
-            <p className="text-xl text-white/90 drop-shadow-md">
+            <p className="text-lg md:text-xl text-white/90 drop-shadow-md max-w-2xl mx-auto">
               Find your perfect date
             </p>
           </div>
@@ -97,14 +111,15 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="relative z-10 bg-background py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Happy Clients
-            </h2>
-            <p className="text-xl text-muted-foreground">
+      {/* Testimonials Section with improved spacing */}
+      <section
+        id="testimonials"
+        className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
+      >
+        <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
+          <div className={components.sectionHeader.container}>
+            <h2 className={components.sectionHeader.title}>Happy Clients</h2>
+            <p className={components.sectionHeader.description}>
               What our customers say about us
             </p>
           </div>
@@ -112,18 +127,20 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Gallery Section with Video Background */}
+      {/* Gallery Section with improved spacing */}
       <section
         id="gallery"
-        className="relative z-10 overflow-hidden min-h-screen flex items-center justify-center py-20"
+        className={`relative z-10 overflow-hidden min-h-screen flex items-center justify-center ${responsiveSpacing.sectionY}`}
       >
         <div className="absolute inset-0 bg-black/60 z-0" />
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg">
+        <div
+          className={`relative z-10 container mx-auto ${responsiveSpacing.containerX}`}
+        >
+          <div className={components.sectionHeader.container}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg">
               Event Gallery
             </h2>
-            <p className="text-xl text-white/90 drop-shadow-md">
+            <p className="text-lg md:text-xl text-white/90 drop-shadow-md max-w-2xl mx-auto">
               Moments that matter
             </p>
           </div>
@@ -133,14 +150,15 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Dashboard Section */}
-      <section id="dashboard" className="relative z-10 bg-background py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Event Dashboard
-            </h2>
-            <p className="text-xl text-muted-foreground">
+      {/* Dashboard Section with improved spacing */}
+      <section
+        id="dashboard"
+        className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
+      >
+        <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
+          <div className={components.sectionHeader.container}>
+            <h2 className={components.sectionHeader.title}>Event Dashboard</h2>
+            <p className={components.sectionHeader.description}>
               Manage your events with ease
             </p>
           </div>
@@ -148,14 +166,15 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="relative z-10 bg-muted/50 py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Get In Touch
-            </h2>
-            <p className="text-xl text-muted-foreground">
+      {/* Contact Section with improved spacing */}
+      <section
+        id="contact"
+        className={`relative z-10 bg-muted/50 ${responsiveSpacing.sectionY}`}
+      >
+        <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
+          <div className={components.sectionHeader.container}>
+            <h2 className={components.sectionHeader.title}>Get In Touch</h2>
+            <p className={components.sectionHeader.description}>
               Ready to plan your perfect event?
             </p>
           </div>

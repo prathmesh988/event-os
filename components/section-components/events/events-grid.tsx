@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { EVENTS } from "@/utils/events/events-data";
-import { EventsSectionHeader } from "./events-section-header";
 import { Events3DCarousel } from "./events-3d-carousel";
 import { CarouselNavigation } from "./carousel-navigation";
 
@@ -15,8 +14,6 @@ export function EventsGrid() {
 
   return (
     <div>
-      <EventsSectionHeader title="Recent Events" />
-
       <Events3DCarousel
         activeIndex={activeIndex}
         onIndexChange={handleIndexChange}

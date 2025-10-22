@@ -2,6 +2,7 @@
 
 import useSWR from "swr";
 import { Card } from "@/components/shared/ui/card";
+import { gaps, typography } from "@/constants";
 
 type Post = {
   id: string;
@@ -16,10 +17,12 @@ export function InstagramFeed() {
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold mb-6 text-white drop-shadow-lg">
+      <h2 className={`${typography.heading.h2} mb-6 text-white drop-shadow-lg`}>
         Gallery
       </h2>
-      <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div
+        className={`grid ${gaps.responsive.lg} grid-cols-2 md:grid-cols-3 lg:grid-cols-4`}
+      >
         {(
           data?.posts ??
           Array.from({ length: 8 }).map((_, i) => ({

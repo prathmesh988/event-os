@@ -9,6 +9,7 @@ import {
   DialogTrigger,
 } from "@/components/shared/ui/dialog";
 import { Button } from "@/components/shared/ui/button";
+import { typography, buttonSizes, gaps, responsiveSpacing } from "@/constants";
 
 const BOOKED_DATES = new Set(["5", "8", "12", "15", "19", "22", "26", "29"]);
 
@@ -46,29 +47,42 @@ export function BookingCalendar() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <div className="flex items-center justify-between py-4">
-        <h2 className="text-2xl font-semibold text-white drop-shadow-lg">
-          Booking Calendar
-        </h2>
+      <div
+        className={`flex flex-col items-center justify-center text-center ${responsiveSpacing.contentGap}`}
+      >
+        <div className={responsiveSpacing.contentGap}>
+          <h2 className={`${typography.heading.h2} text-white drop-shadow-lg`}>
+            Booking Calendar
+          </h2>
+          <p className={`${typography.body.base} text-white/80 drop-shadow-md`}>
+            Check available dates for your event
+          </p>
+        </div>
         <DialogTrigger asChild>
-          <Button className="bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30 shadow-lg">
+          <Button
+            className={`${buttonSizes.sizes.lg} bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border-2 border-white/40 hover:border-white/60 shadow-xl transition-all duration-300 hover:scale-105`}
+          >
             Open Calendar
           </Button>
         </DialogTrigger>
       </div>
       <DialogContent className="max-w-md">
         <DialogHeader>
-          <DialogTitle>Select a Date</DialogTitle>
+          <DialogTitle className={typography.heading.h3}>
+            Select a Date
+          </DialogTitle>
         </DialogHeader>
-        <div className="flex items-center justify-between mb-3">
+        <div className={`flex items-center justify-between mb-3`}>
           <Button
             variant="outline"
             onClick={prevMonth}
-            className="hover:bg-accent bg-transparent"
+            className={`${buttonSizes.sizes.sm} hover:bg-accent bg-transparent`}
           >
             Prev
           </Button>
-          <div className="font-medium">
+          <div
+            className={`${typography.weight.medium} ${typography.body.base}`}
+          >
             {cursor.toLocaleString(undefined, {
               month: "long",
               year: "numeric",
@@ -77,12 +91,14 @@ export function BookingCalendar() {
           <Button
             variant="outline"
             onClick={nextMonth}
-            className="hover:bg-accent bg-transparent"
+            className={`${buttonSizes.sizes.sm} hover:bg-accent bg-transparent`}
           >
             Next
           </Button>
         </div>
-        <div className="grid grid-cols-7 gap-2 text-center text-sm">
+        <div
+          className={`grid grid-cols-7 ${gaps.element.tight} text-center ${typography.body.sm}`}
+        >
           {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((d) => (
             <div key={d} className="text-muted-foreground">
               {d}
@@ -94,7 +110,9 @@ export function BookingCalendar() {
               <button
                 key={i}
                 disabled={!cell.day || booked}
-                className={`aspect-square rounded-md border flex items-center justify-center text-sm font-medium transition-colors
+                className={`aspect-square rounded-md border flex items-center justify-center ${
+                  typography.body.sm
+                } ${typography.weight.medium} transition-colors
                   ${!cell.day ? "opacity-30 border-border" : ""}
                   ${
                     booked
@@ -121,7 +139,7 @@ export function BookingCalendar() {
             );
           })}
         </div>
-        <p className="mt-3 text-xs text-muted-foreground">
+        <p className={`mt-3 ${typography.body.xs} text-muted-foreground`}>
           Tip: Dates in red are already booked. After selecting an available
           date, scroll to the Booking section to submit your inquiry.
         </p>

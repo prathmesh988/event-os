@@ -5,6 +5,13 @@ import { whatsappUrl } from "@/lib/whatsapp";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { BookingModal } from "@/components/shared/booking-modal";
+import {
+  typography,
+  buttonSizes,
+  gaps,
+  responsiveSpacing,
+  containers,
+} from "@/constants";
 
 export function Hero() {
   const waMessage =
@@ -14,7 +21,7 @@ export function Hero() {
 
   return (
     <header
-      className="relative min-h-screen flex items-center justify-center"
+      className={`relative min-h-screen flex items-center justify-center ${responsiveSpacing.containerX} py-20 md:py-24`}
       ref={sectionRef}
     >
       {/* Dark overlay for better text contrast */}
@@ -24,21 +31,28 @@ export function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 bg-background/0"
+        className="relative z-10 w-full"
       >
-        <div className="container mx-auto px-4 py-24 md:py-32">
-          <div className="max-w-3xl">
-            <h1 className="text-pretty text-4xl md:text-6xl font-semibold text-white drop-shadow-lg">
+        <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
+          <div className={containers.xl}>
+            <h1
+              className={`text-pretty ${typography.display["2xl"]} ${typography.weight.semibold} text-white drop-shadow-lg leading-tight`}
+            >
               Turn Your Dream Events into Reality
             </h1>
-            <p className="mt-4 text-lg md:text-xl leading-relaxed max-w-2xl text-white/90 drop-shadow-md">
+            <p
+              className={`mt-6 md:mt-8 ${typography.body.xl} leading-relaxed ${containers.lg} text-white/90 drop-shadow-md`}
+            >
               Book your next event in just 3 clicks – seamless planning from
               venue to vendors.
             </p>
-            <div className="mt-8 flex items-center gap-3">
+            <div
+              className={`mt-10 md:mt-12 flex flex-col sm:flex-row items-start sm:items-center ${gaps.responsive.lg}`}
+            >
               <Button
                 onClick={() => setBookingOpen(true)}
-                className="bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30"
+                size="lg"
+                className={`${buttonSizes.sizes.lg} bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30 font-medium`}
               >
                 Book Now
               </Button>
@@ -50,7 +64,8 @@ export function Hero() {
               >
                 <Button
                   variant="outline"
-                  className="border-white/50 text-white hover:bg-white/10 bg-transparent backdrop-blur-sm"
+                  size="lg"
+                  className={`${buttonSizes.sizes.lg} border-white/50 text-white hover:bg-white/10 bg-transparent backdrop-blur-sm font-medium`}
                 >
                   Chat on WhatsApp
                 </Button>

@@ -1,29 +1,30 @@
 "use client";
 
 import { Card, CardContent } from "@/components/shared/ui/card";
+import { gaps, typography } from "@/constants";
 
 export function ContactMap() {
   return (
-    <div className="grid gap-6 md:grid-cols-2">
+    <div className={`grid ${gaps.responsive.lg} md:grid-cols-2`}>
       <Card>
         <CardContent className="p-6">
-          <h3 className="text-xl font-semibold">Contact</h3>
-          <ul className="mt-4 space-y-2">
+          <h3 className={`${typography.heading.h3}`}>Contact</h3>
+          <ul className={`mt-4 ${gaps.element.tight}`}>
             <li>
-              <span className="font-medium">Phone:</span>{" "}
+              <span className={typography.weight.medium}>Phone:</span>{" "}
               <a className="underline" href="tel:+911234567890">
                 +91 12345 67890
               </a>
             </li>
             <li>
-              <span className="font-medium">Email:</span>{" "}
+              <span className={typography.weight.medium}>Email:</span>{" "}
               <a className="underline" href="mailto:hello@eventplanner.demo">
                 hello@eventplanner.demo
               </a>
             </li>
             <li>
-              <span className="font-medium">Address:</span> Connaught Place, New
-              Delhi
+              <span className={typography.weight.medium}>Address:</span>{" "}
+              Connaught Place, New Delhi
             </li>
           </ul>
         </CardContent>
