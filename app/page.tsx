@@ -14,10 +14,11 @@ import { TopBar } from "@/components/section-components/navigation/top-bar";
 import { EnhancedWaveTransition } from "@/components/shared/enhanced-wave-transition";
 import FixedVideoBackground from "@/components/shared/fixed-video-background";
 import { responsiveSpacing, components, containers } from "@/constants";
+import { ScrollElement } from "@/components/section-components/scroll-wrapper";
 
 export default function Page() {
   return (
-    <main className="relative min-h-screen bg-black">
+    <main className="relative min-h-screen bg-background overflow-x-hidden">
       {/* Fixed Video Background for parallax effect across entire page */}
       <FixedVideoBackground />
 
@@ -27,9 +28,9 @@ export default function Page() {
       </div>
 
       {/* Hero Section with proper spacing */}
-      <div className="relative z-10">
+      <ScrollElement name="hero" className="relative z-10">
         <Hero />
-      </div>
+      </ScrollElement>
 
       {/* Main Featured Section */}
       <div className="relative z-10">
@@ -37,8 +38,8 @@ export default function Page() {
       </div>
 
       {/* Events Section with improved spacing */}
-      <section
-        id="events"
+      <ScrollElement
+        name="events"
         className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
       >
         <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
@@ -52,27 +53,31 @@ export default function Page() {
           </div>
           <EventsGrid />
         </div>
-      </section>
+      </ScrollElement>
 
       {/* Packages Section with improved spacing */}
-      <section
-        id="packages"
+      <ScrollElement
+        name="packages"
         className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
       >
-        <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
+        <div
+          className={`container mx-auto ${responsiveSpacing.containerX} w-full`}
+        >
           <div className={components.sectionHeader.container}>
             <h2 className={components.sectionHeader.title}>Event Packages</h2>
             <p className={components.sectionHeader.description}>
               Perfect plans for every celebration
             </p>
           </div>
-          <Packages />
+          <div className="w-full">
+            <Packages />
+          </div>
         </div>
-      </section>
+      </ScrollElement>
 
       {/* Booking Section with improved spacing */}
-      <section
-        id="booking"
+      <ScrollElement
+        name="booking"
         className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
       >
         <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
@@ -86,7 +91,7 @@ export default function Page() {
             <BookingForm />
           </div>
         </div>
-      </section>
+      </ScrollElement>
 
       {/* Wave Transition */}
       <EnhancedWaveTransition />
@@ -112,8 +117,8 @@ export default function Page() {
       </section>
 
       {/* Testimonials Section with improved spacing */}
-      <section
-        id="testimonials"
+      <ScrollElement
+        name="testimonials"
         className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
       >
         <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
@@ -125,11 +130,11 @@ export default function Page() {
           </div>
           <Testimonials />
         </div>
-      </section>
+      </ScrollElement>
 
       {/* Gallery Section with improved spacing */}
-      <section
-        id="gallery"
+      <ScrollElement
+        name="gallery"
         className={`relative z-10 overflow-hidden min-h-screen flex items-center justify-center ${responsiveSpacing.sectionY}`}
       >
         <div className="absolute inset-0 bg-black/60 z-0" />
@@ -148,11 +153,11 @@ export default function Page() {
             <InstagramFeed />
           </Suspense>
         </div>
-      </section>
+      </ScrollElement>
 
       {/* Dashboard Section with improved spacing */}
-      <section
-        id="dashboard"
+      <ScrollElement
+        name="dashboard"
         className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
       >
         <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
@@ -164,11 +169,11 @@ export default function Page() {
           </div>
           <DashboardPreview />
         </div>
-      </section>
+      </ScrollElement>
 
       {/* Contact Section with improved spacing */}
-      <section
-        id="contact"
+      <ScrollElement
+        name="contact"
         className={`relative z-10 bg-muted/50 ${responsiveSpacing.sectionY}`}
       >
         <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
@@ -180,7 +185,7 @@ export default function Page() {
           </div>
           <ContactMap />
         </div>
-      </section>
+      </ScrollElement>
 
       {/* Floating Elements */}
       <div className="relative z-50">

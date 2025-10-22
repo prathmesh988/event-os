@@ -92,6 +92,9 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: 1.1.6
         version: 1.1.6(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@types/react-scroll':
+        specifier: ^1.8.10
+        version: 1.8.10
       '@vercel/analytics':
         specifier: 1.3.1
         version: 1.3.1(next@15.2.4(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react@19.2.0)
@@ -119,9 +122,6 @@ importers:
       framer-motion:
         specifier: ^12.23.24
         version: 12.23.24(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      gsap:
-        specifier: latest
-        version: 3.13.0
       input-otp:
         specifier: 1.4.1
         version: 1.4.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -149,6 +149,9 @@ importers:
       react-resizable-panels:
         specifier: ^2.1.7
         version: 2.1.9(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      react-scroll:
+        specifier: ^1.9.3
+        version: 1.9.3(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       recharts:
         specifier: 2.15.4
         version: 2.15.4(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -1211,6 +1214,9 @@ packages:
     peerDependencies:
       '@types/react': ^19.2.0
 
+  '@types/react-scroll@1.8.10':
+    resolution: {integrity: sha512-RD4Z7grbdNGOKwKnUBKar6zNxqaW3n8m9QSrfvljW+gmkj1GArb8AFBomVr6xMOgHPD3v1uV3BrIf01py57daQ==}
+
   '@types/react@19.2.2':
     resolution: {integrity: sha512-6mDvHUFSjyT2B2yeNx2nUgMxh9LtOWvkhIU3uePn2I2oyNymUAX1NIsdgviM4CH+JSrp2D2hsMvJOkxY+0wNRA==}
 
@@ -1721,9 +1727,6 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  gsap@3.13.0:
-    resolution: {integrity: sha512-QL7MJ2WMjm1PHWsoFrAQH/J8wUeqZvMtHO58qdekHpCfhvhSL4gSiz6vJf5EeMP0LOn3ZCprL2ki/gjED8ghVw==}
-
   has-symbols@1.1.0:
     resolution: {integrity: sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ==}
     engines: {node: '>= 0.4'}
@@ -1859,6 +1862,9 @@ packages:
   lightningcss@1.30.1:
     resolution: {integrity: sha512-xi6IyHML+c9+Q3W0S4fCQJOym42pyurFiJUHEcEyHS0CeKzia4yZDEsLlqOFykxOdHpNy0NmvVO31vcSqAxJCg==}
     engines: {node: '>= 12.0.0'}
+
+  lodash.throttle@4.1.1:
+    resolution: {integrity: sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==}
 
   lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
@@ -2110,6 +2116,12 @@ packages:
     peerDependencies:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
       react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+
+  react-scroll@1.9.3:
+    resolution: {integrity: sha512-xv7FXqF3k63aSLNu4/NjFvRNI0ge7DmmmsbeGarP7LZVAlJMSjUuW3dTtLxp1Afijyv0lS2qwC0GiFHvx1KBHQ==}
+    peerDependencies:
+      react: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   react-smooth@4.0.4:
     resolution: {integrity: sha512-gnGKTpYwqL0Iii09gHobNolvX4Kiq4PKx6eWBCYYix+8cdw+cGo3do906l1NBPKkSWx1DghC1dlWG9L2uGd61Q==}
@@ -3478,6 +3490,10 @@ snapshots:
     dependencies:
       '@types/react': 19.2.2
 
+  '@types/react-scroll@1.8.10':
+    dependencies:
+      '@types/react': 19.2.2
+
   '@types/react@19.2.2':
     dependencies:
       csstype: 3.1.3
@@ -3996,8 +4012,6 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  gsap@3.13.0: {}
-
   has-symbols@1.1.0: {}
 
   hasown@2.0.2:
@@ -4106,6 +4120,8 @@ snapshots:
       lightningcss-linux-x64-musl: 1.30.1
       lightningcss-win32-arm64-msvc: 1.30.1
       lightningcss-win32-x64-msvc: 1.30.1
+
+  lodash.throttle@4.1.1: {}
 
   lodash@4.17.21: {}
 
@@ -4353,6 +4369,13 @@ snapshots:
 
   react-resizable-panels@2.1.9(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
     dependencies:
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
+
+  react-scroll@1.9.3(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+    dependencies:
+      lodash.throttle: 4.1.1
+      prop-types: 15.8.1
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
 

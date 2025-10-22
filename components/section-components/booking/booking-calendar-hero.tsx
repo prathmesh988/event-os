@@ -14,10 +14,10 @@ import {
 export function BookingCalendarHero() {
   return (
     <section
-      className={`relative min-h-screen flex items-center justify-center ${responsiveSpacing.sectionY} overflow-hidden ${responsiveSpacing.containerX}`}
+      className={`relative min-h-screen bg-background flex items-center justify-center ${responsiveSpacing.sectionY} overflow-hidden ${responsiveSpacing.containerX}`}
     >
       {/* Background overlay for better contrast */}
-      <div className="absolute inset-0 bg-black z-0" />
+      <div className="absolute inset-0  z-0" />
       {/* Content Container */}
       <div
         className={`relative z-20 container mx-auto ${responsiveSpacing.containerX} text-center`}
@@ -27,7 +27,7 @@ export function BookingCalendarHero() {
         >
           {/* Large Hero Text with Premium Typography */}
           <h1
-            className={`${typography.display["2xl"]} ${typography.weight.black} text-white tracking-tighter animate-fade-in drop-shadow-lg leading-tight ${responsiveSpacing.contentGap}`}
+            className={`${typography.display["2xl"]} ${typography.weight.black}  tracking-tighter animate-fade-in drop-shadow-lg leading-tight ${responsiveSpacing.contentGap}`}
           >
             <span className="block transform hover:scale-105 transition-transform duration-700 ease-out">
               LET'S GET
@@ -92,16 +92,16 @@ export function BookingCalendarHero() {
 
           {/* Premium Booking Calendar Section */}
           <div
-            className={`glass-effect rounded-3xl border border-white/20 p-8 md:p-12 lg:p-16 animate-scale-in premium-hover ${responsiveSpacing.blockGap}`}
+            className={`glass-effect rounded-3xl border-2 border-black/30 dark:border-white/20 bg-white/80 dark:bg-white/5 backdrop-blur-xl shadow-lg dark:shadow-none p-8 md:p-12 lg:p-16 animate-scale-in premium-hover ${responsiveSpacing.blockGap}`}
           >
             <div className={responsiveSpacing.cardGap}>
               <h3
-                className={`${typography.heading.h1} ${typography.weight.black} text-white tracking-tight drop-shadow-md`}
+                className={`${typography.heading.h1} ${typography.weight.black}  tracking-tight drop-shadow-md`}
               >
                 Booking Calendar
               </h3>
               <p
-                className={`${typography.body.xl} text-white/90 ${typography.weight.light} drop-shadow-sm ${containers.lg} mx-auto`}
+                className={`${typography.body.xl} text-current/20 ${typography.weight.light} drop-shadow-sm ${containers.lg} mx-auto`}
               >
                 Choose your perfect date
               </p>
@@ -113,7 +113,7 @@ export function BookingCalendarHero() {
             >
               <Button
                 size="lg"
-                className={`group relative ${buttonSizes.touchTarget.large} bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:from-pink-600 hover:via-purple-600 hover:to-indigo-600 text-white px-8 md:px-12 py-4 md:py-6 ${typography.body.lg} ${typography.weight.bold} rounded-full shadow-2xl hover:shadow-pink-500/30 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 premium-hover`}
+                className={`group relative ${buttonSizes.touchTarget.large} bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:from-pink-600 hover:via-purple-600 hover:to-indigo-600  px-8 md:px-12 py-4 md:py-6 ${typography.body.lg} ${typography.weight.bold} rounded-full shadow-2xl hover:shadow-pink-500/30 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 premium-hover`}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
                 <div className="relative flex items-center">
@@ -125,7 +125,7 @@ export function BookingCalendarHero() {
               <Button
                 variant="outline"
                 size="lg"
-                className={`group relative ${buttonSizes.touchTarget.large} border-2 border-white/40 text-white hover:bg-white/20 hover:border-white/60 px-8 md:px-12 py-4 md:py-6 ${typography.body.lg} ${typography.weight.semibold} rounded-full backdrop-blur-md transition-all duration-500 transform hover:scale-105 hover:-translate-y-1`}
+                className={`group relative ${buttonSizes.touchTarget.large} border-2 border-white/40  hover:bg-white/20 hover:border-white/60 px-8 md:px-12 py-4 md:py-6 ${typography.body.lg} ${typography.weight.semibold} rounded-full backdrop-blur-md transition-all duration-500 transform hover:scale-105 hover:-translate-y-1`}
               >
                 <div className="absolute inset-0 bg-white/10 rounded-full blur opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
                 <div className="relative flex items-center justify-center">
@@ -143,21 +143,21 @@ export function BookingCalendarHero() {
             className={`grid grid-cols-1 md:grid-cols-3 ${gaps.responsive.lg} animate-slide-up`}
           >
             <div
-              className={`glass-effect rounded-2xl p-6 md:p-8 border border-white/20 premium-hover group ${responsiveSpacing.cardGap}`}
+              className={`glass-effect rounded-2xl p-6 md:p-8 border-2 border-black/30 dark:border-white/20 bg-white/80 dark:bg-white/5 backdrop-blur-xl shadow-lg dark:shadow-none premium-hover group ${responsiveSpacing.cardGap}`}
             >
               <div
                 className={`${iconSizes.responsive["2xl"]} bg-gradient-to-r from-pink-400 to-purple-400 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg`}
               >
-                <Calendar className={`${iconSizes.responsive.xl} text-white`} />
+                <Calendar className={`${iconSizes.responsive.xl} `} />
               </div>
               <div className={responsiveSpacing.contentGap}>
                 <h4
-                  className={`text-white ${typography.weight.bold} ${typography.body.lg} drop-shadow-sm`}
+                  className={` ${typography.weight.bold} ${typography.body.lg} drop-shadow-sm`}
                 >
                   Easy Booking
                 </h4>
                 <p
-                  className={`text-white/80 leading-relaxed ${typography.body.sm}`}
+                  className={`text-currenttext-current/80 leading-relaxed ${typography.body.sm}`}
                 >
                   Select your perfect date in just a few clicks with our
                   intuitive interface
@@ -166,43 +166,43 @@ export function BookingCalendarHero() {
             </div>
 
             <div
-              className={`glass-effect rounded-2xl p-6 md:p-8 border border-white/20 premium-hover group ${responsiveSpacing.cardGap}`}
+              className={`glass-effect rounded-2xl p-6 md:p-8 border-2 border-black/30 dark:border-white/20 bg-white/80 dark:bg-white/5 backdrop-blur-xl shadow-lg dark:shadow-none premium-hover group ${responsiveSpacing.cardGap}`}
             >
               <div
                 className={`${iconSizes.responsive["2xl"]} bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg`}
               >
-                <Clock className={`${iconSizes.responsive.xl} text-white`} />
+                <Clock className={`${iconSizes.responsive.xl}`} />
               </div>
               <div className={responsiveSpacing.contentGap}>
                 <h4
-                  className={`text-white ${typography.weight.bold} ${typography.body.lg} drop-shadow-sm`}
+                  className={` ${typography.weight.bold} ${typography.body.lg} drop-shadow-sm`}
                 >
                   Real-time Availability
                 </h4>
                 <p
-                  className={`text-white/80 leading-relaxed ${typography.body.sm}`}
+                  className={`text-current/80 leading-relaxed ${typography.body.sm}`}
                 >
-                  See available slots updated instantly for seamless planning
+                  seamless planning
                 </p>
               </div>
             </div>
 
             <div
-              className={`glass-effect rounded-2xl p-6 md:p-8 border border-white/20 premium-hover group ${responsiveSpacing.cardGap}`}
+              className={`glass-effect rounded-2xl p-6 md:p-8 border-2 border-black/30 dark:border-white/20 bg-white/80 dark:bg-white/5 backdrop-blur-xl shadow-lg dark:shadow-none premium-hover group ${responsiveSpacing.cardGap}`}
             >
               <div
                 className={`${iconSizes.responsive["2xl"]} bg-gradient-to-r from-indigo-400 to-pink-400 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg`}
               >
-                <MapPin className={`${iconSizes.responsive.xl} text-white`} />
+                <MapPin className={`${iconSizes.responsive.xl} `} />
               </div>
               <div className={responsiveSpacing.contentGap}>
                 <h4
-                  className={`text-white ${typography.weight.bold} ${typography.body.lg} drop-shadow-sm`}
+                  className={` ${typography.weight.bold} ${typography.body.lg} drop-shadow-sm`}
                 >
                   Perfect Venues
                 </h4>
                 <p
-                  className={`text-white/80 leading-relaxed ${typography.body.sm}`}
+                  className={`text-current/80 leading-relaxed ${typography.body.sm}`}
                 >
                   Premium locations carefully curated for your special day
                 </p>

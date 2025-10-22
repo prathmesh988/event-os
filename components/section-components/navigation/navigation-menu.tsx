@@ -50,7 +50,7 @@ export function NavigationMenu({
       className={`${
         isMobile
           ? `flex flex-col ${gaps.element.tight}`
-          : `hidden md:flex items-center ${gaps.element.tight}`
+          : `hidden lg:flex items-center ${gaps.element.tight}`
       }`}
     >
       {navigationItems.map((item) => (

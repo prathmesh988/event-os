@@ -27,7 +27,7 @@ export function MobileMenu() {
         <Button
           variant="ghost"
           size="sm"
-          className={`md:hidden ${buttonSizes.touchTarget.minimum} rounded-full`}
+          className={`lg:hidden ${buttonSizes.touchTarget.minimum} rounded-full`}
           aria-label="Open navigation menu"
         >
           <Menu className={iconSizes.base} />

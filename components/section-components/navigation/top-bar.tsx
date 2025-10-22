@@ -6,6 +6,7 @@ import { NavigationMenu } from "./navigation-menu";
 import { ThemeToggle } from "./theme-toggle";
 import { MobileMenu } from "./mobile-menu";
 import { Calendar, Sparkles } from "lucide-react";
+import { Link } from "react-scroll";
 import {
   buttonSizes,
   iconSizes,
@@ -31,49 +32,53 @@ export function TopBar() {
         <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
           <div className="flex items-center justify-between min-h-[64px] py-2">
             {/* Animated Logo */}
-            <div
-              className={`flex items-center ${gaps.element.normal} group cursor-pointer ${buttonSizes.touchTarget.minimum} py-2`}
-            >
+            <Link to="hero" smooth={true} offset={-80} duration={500}>
               <div
-                className={`${
-                  iconSizes.responsive.lg
-                } bg-gradient-to-r from-primary to-primary/80 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 ${
-                  isScrolled ? "shadow-md" : "shadow-lg"
-                }`}
+                className={`flex items-center ${gaps.element.normal} group cursor-pointer ${buttonSizes.touchTarget.minimum} py-2`}
               >
-                <Calendar
-                  className={`${iconSizes.md} text-primary-foreground`}
+                <div
+                  className={`${
+                    iconSizes.responsive.lg
+                  } bg-gradient-to-r from-primary to-primary/80 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 ${
+                    isScrolled ? "shadow-md" : "shadow-lg"
+                  }`}
+                >
+                  <Calendar
+                    className={`${iconSizes.md} text-primary-foreground`}
+                  />
+                </div>
+                <span
+                  className={`${typography.body.lg} ${typography.weight.bold} bg-gradient-to-r from-primary via-primary/90 to-primary/80 bg-clip-text text-transparent`}
+                >
+                  EventPro
+                </span>
+                <Sparkles
+                  className={`${iconSizes.responsive.sm} text-primary opacity-70 group-hover:opacity-100 transition-opacity`}
                 />
               </div>
-              <span
-                className={`${typography.body.lg} ${typography.weight.bold} bg-gradient-to-r from-primary via-primary/90 to-primary/80 bg-clip-text text-transparent`}
-              >
-                EventPro
-              </span>
-              <Sparkles
-                className={`${iconSizes.responsive.sm} text-primary opacity-70 group-hover:opacity-100 transition-opacity`}
-              />
-            </div>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className={`flex items-center ${gaps.responsive.md}`}>
               <NavigationMenu />
 
               {/* Enhanced CTA Button */}
-              <Button
-                size="default"
-                className={`hidden md:flex group relative overflow-hidden ${buttonSizes.sizes.md} bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300`}
-              >
-                <span
-                  className={`relative z-10 ${typography.body.base} ${typography.weight.medium}`}
+              <Link to="booking" smooth={true} offset={-80} duration={500}>
+                <Button
+                  size="default"
+                  className={`hidden lg:flex group relative overflow-hidden ${buttonSizes.sizes.md} bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer`}
                 >
-                  Book Event
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Button>
+                  <span
+                    className={`relative z-10 ${typography.body.base} ${typography.weight.medium}`}
+                  >
+                    Book Event
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </Button>
+              </Link>
 
               {/* Theme Toggle - Desktop */}
-              <div className="hidden md:block">
+              <div className="hidden lg:block">
                 <ThemeToggle />
               </div>
             </div>
@@ -84,12 +89,14 @@ export function TopBar() {
         </div>
       </div>
 
-      {/* Animated border bottom */}
+      {/* Animated border bottom - removed to prevent visual artifacts */}
+      {/* 
       <div
         className={`h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent transition-opacity duration-300 ${
           isScrolled ? "opacity-100" : "opacity-0"
         }`}
       />
+      */}
     </div>
   );
 }

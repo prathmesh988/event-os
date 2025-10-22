@@ -11,8 +11,6 @@ export default function FixedVideoBackground() {
 
   // Create parallax effect: video moves slower than scroll
   // Adjust these values to control the parallax intensity
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
   return (
     <div
@@ -21,7 +19,6 @@ export default function FixedVideoBackground() {
     >
       <motion.video
         ref={videoRef}
-        style={{ y, scale }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
