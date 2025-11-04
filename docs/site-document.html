@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Event Planner — Site Document</title>
+    <style>
+      /* Page-like container centered on screen */
+      :root {
+        --page-width: 210mm; /* A4 width */
+        --page-height: 297mm; /* A4 height */
+        --page-padding: 24mm;
+        --body-bg: #e6e9ef;
+        --paper-bg: #fff;
+        --muted: #6b7280;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        padding: 40px;
+        background: var(--body-bg);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .page {
+        width: calc(var(--page-width));
+        min-height: calc(var(--page-height));
+        margin: 0 auto 20px auto;
+        background: var(--paper-bg);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        padding: var(--page-padding);
+        box-sizing: border-box;
+        color: #111827;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+      }
+      header h1 {
+        font-size: 20px;
+        margin: 0;
+      }
+      header p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .toc {
+        border-top: 1px solid #e6e9ef;
+        padding-top: 12px;
+        margin-bottom: 18px;
+      }
+      .toc ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+      .toc li {
+        margin: 6px 0;
+        color: var(--muted);
+      }
+
+      section {
+        page-break-inside: avoid;
+        margin-bottom: 18px;
+      }
+      h2 {
+        font-size: 16px;
+        margin: 12px 0;
+      }
+      h3 {
+        font-size: 13px;
+        margin: 8px 0;
+        color: #111827;
+      }
+      p {
+        color: #374151;
+        line-height: 1.45;
+        margin: 6px 0;
+      }
+
+      .meta {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 12px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      /* Gallery grid */
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+      }
+      .gallery img {
+        width: 100%;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      footer {
+        position: relative;
+        margin-top: 18px;
+        padding-top: 12px;
+        border-top: 1px solid #eee;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      /* Print specific rules: size A4, remove shadows, show multiple pages */
+      @media print {
+        body {
+          background: white;
+          padding: 0;
+        }
+        .page {
+          box-shadow: none;
+          margin: 0;
+          padding: 18mm;
+          page-break-after: always;
+        }
+        header h1 {
+          font-size: 18px;
+        }
+        .gallery img {
+          height: 60px;
+        }
+      }
+
+      /* Page numbering for print (some browsers) */
+      @page {
+        size: A4;
+        margin: 18mm;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div>
+          <h1>Event Planner — Website Document</h1>
+          <p>Project: my-v0-project</p>
+        </div>
+        <div style="text-align: right">
+          <p>
+            Generated:
+            <!-- date filled by user -->
+          </p>
+          <p>Version: 0.1.0</p>
+        </div>
+      </header>
+
+      <div class="meta">
+        <span>Author: design system</span>
+        <span>Platform: Next.js 15</span>
+        <span>Runtime: React 19</span>
+      </div>
+
+      <section class="toc">
+        <h2>Table of contents</h2>
+        <ul>
+          <li>1. Overview</li>
+          <li>2. Navigation</li>
+          <li>3. Hero</li>
+          <li>4. Events</li>
+          <li>5. Packages</li>
+          <li>6. Booking</li>
+          <li>7. Calendar</li>
+          <li>8. Testimonials</li>
+          <li>9. Gallery</li>
+          <li>10. Contact</li>
+          <li>11. Dashboard</li>
+        </ul>
+      </section>
+
+      <section id="overview">
+        <h2>1. Overview</h2>
+        <p>
+          This document summarizes the Event Planner demo website. The site is
+          built with Next.js and React, and includes sections for exploring
+          events, packages, booking, calendar availability, testimonials, and a
+          gallery. The layout is component-driven and responsive.
+        </p>
+      </section>
+
+      <section id="navigation">
+        <h2>2. Navigation</h2>
+        <p>
+          The site uses a top navigation bar with anchor-style navigation that
+          leverages react-scroll's Element API. Sections are registered with
+          names such as <code>hero</code>, <code>events</code>,
+          <code>packages</code>, and <code>gallery</code>. Smooth scrolling is
+          enabled and the nav highlights the active item when clicked.
+        </p>
+      </section>
+
+      <section id="hero">
+        <h2>3. Hero</h2>
+        <p>
+          The hero section provides the main visual introduction and may include
+          a video background (component <code>FixedVideoBackground</code>), a
+          title and a call to action. It's wrapped inside a
+          <code>ScrollElement</code> with name <code>hero</code> so navigation
+          targets it directly.
+        </p>
+      </section>
+
+      <section id="events">
+        <h2>4. Events</h2>
+        <p>
+          Events are presented using an events grid and a 3D carousel. The
+          components involved include <code>EventsGrid</code> and
+          <code>events-3d-carousel</code>. Event cards show images, titles and
+          short descriptions highlighting featured events.
+        </p>
+      </section>
+
+      <section id="packages">
+        <h2>5. Packages</h2>
+        <p>
+          Packages present different pricing and feature sets for event
+          planning. The <code>Packages</code> component is responsible for
+          layout and package cards.
+        </p>
+      </section>
+
+      <section id="booking">
+        <h2>6. Booking</h2>
+        <p>
+          The booking flow includes a calendar view, a booking hero section and
+          a form implemented in <code>BookingForm</code>. The form uses React
+          Hook Form and Zod for validation. Availability is checked via the
+          <code>BookingCalendar</code> component.
+        </p>
+      </section>
+
+      <section id="calendar">
+        <h2>7. Calendar (Availability)</h2>
+        <p>
+          A dedicated calendar checks availability and surfaces open dates. It
+          is intentionally full-screen and sits behind a semitransparent overlay
+          to focus the user's attention on selection.
+        </p>
+      </section>
+
+      <section id="testimonials">
+        <h2>8. Testimonials</h2>
+        <p>
+          Client testimonials are displayed using the <code>Testimonials</code>
+          component with cards and optional carousel navigation.
+        </p>
+      </section>
+
+      <section id="gallery">
+        <h2>9. Gallery</h2>
+        <p>
+          The gallery displays a grid of images. The demo code includes a static
+          image array used for the feed as fallback content. Below are a few
+          sample images used in the site.
+        </p>
+        <div class="gallery">
+          <img
+            src="https://images.jdmagicbox.com/v2/comp/bangalore/b3/080pxx80.xx80.240705140239.s7b3/catalogue/golden-hour-events-m-g-road-bangalore-event-organisers-f3rpi1i41f.jpg"
+            alt="gallery-1"
+          />
+          <img
+            src="https://images.jdmagicbox.com/v2/comp/bangalore/b3/080pxx80.xx80.240705140239.s7b3/catalogue/golden-hour-events-m-g-road-bangalore-event-organisers-vvisk95bv5.jpg"
+            alt="gallery-2"
+          />
+          <img
+            src="https://images.jdmagicbox.com/v2/comp/bangalore/b3/080pxx80.xx80.240705140239.s7b3/catalogue/golden-hour-events-m-g-road-bangalore-event-organisers-j0b7hg3m0s.jpg"
+            alt="gallery-3"
+          />
+          <img
+            src="https://images.jdmagicbox.com/v2/comp/bangalore/b3/080pxx80.xx80.240705140239.s7b3/catalogue/golden-hour-events-m-g-road-bangalore-event-organisers-nevku266gi.jpg"
+            alt="gallery-4"
+          />
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>10. Contact</h2>
+        <p>
+          The contact section includes a map component and contact information
+          so visitors can reach out to the events team. The contact map is
+          implemented via <code>ContactMap</code>.
+        </p>
+      </section>
+
+      <section id="dashboard">
+        <h2>11. Dashboard</h2>
+        <p>
+          A preview dashboard component provides quick access to administrative
+          interfaces and metrics. The demo includes a
+          <code>DashboardPreview</code>
+          component that illustrates the dashboard layout.
+        </p>
+      </section>
+
+      <footer>
+        <p>
+          To export as PDF: choose Print in your browser and select "Save as
+          PDF". Use A4 paper size and enable background graphics for best
+          results.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

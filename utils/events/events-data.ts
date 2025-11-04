@@ -12,63 +12,72 @@ export const EVENTS: EventItem[] = [
     id: "1",
     title: "Beach Wedding",
     category: "Wedding",
-    image: "/beach-wedding-ceremony.png",
+    image:
+      "https://images.jdmagicbox.com/v2/comp/bangalore/a6/080pxx80.xx80.130912180749.d8a6/catalogue/effects-events-horamavu-bangalore-wedding-organisers-33m9m6kkro.jpg",
     caption: "Intimate sunset vows",
   },
   {
     id: "2",
     title: "Corporate Summit",
     category: "Corporate",
-    image: "/corporate-conference-stage.jpg",
+    image:
+      "https://images.jdmagicbox.com/v2/comp/bangalore/a6/080pxx80.xx80.130912180749.d8a6/catalogue/effects-events-horamavu-bangalore-wedding-organisers-3msnstvog5.jpg",
     caption: "Seamless AV and staging",
   },
   {
     id: "3",
     title: "Birthday Soiree",
     category: "Party",
-    image: "/birthday-party-balloons.jpg",
+    image:
+      "https://images.jdmagicbox.com/v2/comp/bangalore/a6/080pxx80.xx80.130912180749.d8a6/catalogue/effects-events-horamavu-bangalore-wedding-organisers-noddcsk2xl.jpg",
     caption: "Personalized decor and cake",
   },
   {
     id: "4",
     title: "Luxury Wedding",
     category: "Wedding",
-    image: "/luxury-wedding-banquet.jpg",
+    image:
+      "https://images.jdmagicbox.com/v2/comp/bangalore/a6/080pxx80.xx80.130912180749.d8a6/catalogue/effects-events-horamavu-bangalore-wedding-organisers-ry10muq6qh.jpg",
     caption: "Orchids and gold accents",
   },
   {
     id: "5",
     title: "Team Offsite",
     category: "Corporate",
-    image: "/team-offsite-retreat.jpg",
+    image:
+      "https://images.jdmagicbox.com/v2/comp/bangalore/a6/080pxx80.xx80.130912180749.d8a6/catalogue/effects-events-horamavu-bangalore-wedding-organisers-ex8holjxdy.jpg",
     caption: "Bonding + productivity",
   },
   {
     id: "6",
     title: "Kids Theme Party",
     category: "Party",
-    image: "/kids-theme-party-decor.jpg",
+    image:
+      "https://images.jdmagicbox.com/v2/comp/bangalore/a6/080pxx80.xx80.130912180749.d8a6/catalogue/effects-events-horamavu-bangalore-wedding-organisers-9gh7kn7p03.jpg",
     caption: "Memories for a lifetime",
   },
   {
     id: "7",
     title: "Garden Gala",
     category: "Wedding",
-    image: "/garden-wedding-gala.jpg",
+    image:
+      "https://images.jdmagicbox.com/v2/comp/bangalore/a6/080pxx80.xx80.130912180749.d8a6/catalogue/effects-events-horamavu-bangalore-wedding-organisers-33m9m6kkro.jpg",
     caption: "Floral arrangements and lights",
   },
   {
     id: "8",
     title: "Product Launch",
     category: "Corporate",
-    image: "/product-launch-event.png",
+    image:
+      "https://images.jdmagicbox.com/v2/comp/bangalore/a6/080pxx80.xx80.130912180749.d8a6/catalogue/effects-events-horamavu-bangalore-wedding-organisers-ob7kzrmtqg.jpg",
     caption: "Interactive booths and demos",
   },
   {
     id: "9",
     title: "Anniversary Bash",
     category: "Party",
-    image: "/anniversary-party-celebration.jpg",
+    image:
+      "https://images.jdmagicbox.com/v2/comp/bangalore/a6/080pxx80.xx80.130912180749.d8a6/catalogue/effects-events-horamavu-bangalore-wedding-organisers-tbgpvyyhi5.jpg",
     caption: "Nostalgic decor and music",
   },
 ];

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { scroller } from "react-scroll";
 import { Button } from "@/components/shared/ui/button";
 import { gaps } from "@/constants";
 
@@ -11,7 +12,7 @@ interface NavMenuItem {
 }
 
 const navigationItems: NavMenuItem[] = [
-  { label: "Home", href: "#", id: "home" },
+  { label: "Home", href: "#hero", id: "hero" },
   { label: "Events", href: "#events", id: "events" },
   { label: "Packages", href: "#packages", id: "packages" },
   { label: "Booking", href: "#booking", id: "booking" },
@@ -28,20 +29,26 @@ export function NavigationMenu({
   isMobile = false,
   onItemClick,
 }: NavigationMenuProps) {
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState("hero");
 
   const handleNavClick = (href: string, id: string) => {
     setActiveSection(id);
     onItemClick?.();
 
     if (href.startsWith("#")) {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
+      // react-scroll Elements are registered by name, so use scroller.scrollTo
+      const target = href.slice(1) || "hero";
+      scroller.scrollTo(target, {
+        duration: 500,
+        smooth: true,
+        offset: -80,
+      });
+      return;
+    }
+
+    // fallback for non-hash links
+    if (href.startsWith("http") || href.startsWith("/")) {
+      window.location.href = href;
     }
   };
 

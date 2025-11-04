@@ -13,18 +13,16 @@ export function ContactMap() {
             <li>
               <span className={typography.weight.medium}>Phone:</span>{" "}
               <a className="underline" href="tel:+911234567890">
-                +91 12345 67890
+                +91 8888397597
               </a>
             </li>
+
             <li>
-              <span className={typography.weight.medium}>Email:</span>{" "}
-              <a className="underline" href="mailto:hello@eventplanner.demo">
-                hello@eventplanner.demo
-              </a>
-            </li>
-            <li>
-              <span className={typography.weight.medium}>Address:</span>{" "}
-              Connaught Place, New Delhi
+              <span className={typography.weight.medium}>Address:</span> M G D
+              Tale CREATRIX | Leading Event Management & Best Wedding Planners
+              in Pune Flat No-09, 3rd Floor, Shreeyash Apartment, Appasaheb
+              Kulkarni Path, Navasahyadri Society, Ganesh Nagar, Karvenagar,
+              Pune, Maharashtra 411052
             </li>
           </ul>
         </CardContent>

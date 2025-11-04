@@ -80,8 +80,10 @@ export default function Page() {
         name="booking"
         className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
       >
-        <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
-          <div className={components.sectionHeader.container}>
+        <div
+          className={` flex container mx-auto ${responsiveSpacing.containerX}`}
+        >
+          <div className={components.sectionHeader.container + ` self-center`}>
             <h2 className={components.sectionHeader.title}>Book Your Event</h2>
             <p className={components.sectionHeader.description}>
               Let's make your dream event reality
