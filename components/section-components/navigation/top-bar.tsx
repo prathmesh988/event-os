@@ -13,6 +13,8 @@ import {
   gaps,
   typography,
   responsiveSpacing,
+  siteInfo,
+  navigation,
 } from "@/constants";
 
 export function TopBar() {
@@ -27,7 +29,7 @@ export function TopBar() {
       }`}
     >
       <div
-        className={`transition-all duration-300 ease-out ${"bg-background/80 backdrop-blur-lg border-b shadow-lg"}`}
+        className={`transition-all duration-300 ease-out backdrop-blur-xl bg-background/80 border-b border-border/50 shadow-lg dark:shadow-2xl supports-[backdrop-filter]:bg-background/60`}
       >
         <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
           <div className="flex items-center justify-between min-h-[64px] py-2">
@@ -37,11 +39,7 @@ export function TopBar() {
                 className={`flex items-center ${gaps.element.normal} group cursor-pointer ${buttonSizes.touchTarget.minimum} py-2`}
               >
                 <div
-                  className={`${
-                    iconSizes.responsive.lg
-                  } bg-gradient-to-r from-primary to-primary/80 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 ${
-                    isScrolled ? "shadow-md" : "shadow-lg"
-                  }`}
+                  className={`${iconSizes.responsive.lg} bg-gradient-to-r from-primary to-primary/80 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-md dark:shadow-lg`}
                 >
                   <img
                     src="https://glimageurl.golocall.com/golocopg-logo/698692_logo_urbanevents1576850461.png"
@@ -54,7 +52,7 @@ export function TopBar() {
                 <span
                   className={`${typography.body.lg} ${typography.weight.bold} bg-gradient-to-r from-primary via-primary/90 to-primary/80 bg-clip-text text-transparent`}
                 >
-                  D Tale Creatrix
+                  {siteInfo.name}
                 </span>
                 <Sparkles
                   className={`${iconSizes.responsive.sm} text-primary opacity-70 group-hover:opacity-100 transition-opacity`}
@@ -75,7 +73,7 @@ export function TopBar() {
                   <span
                     className={`relative z-10 ${typography.body.base} ${typography.weight.medium}`}
                   >
-                    Book Event
+                    {navigation.cta.text}
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Button>

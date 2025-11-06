@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stake Gems</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .stake-gems {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .gem {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ff9e80, #ff4d4f);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .gem:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      }
+      .gem::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.2) 0%,
+          rgba(255, 255, 255, 0) 70%
+        );
+        z-index: 1;
+      }
+      .gem::after {
+        content: "💎";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        color: white;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 2;
+      }
+      .description {
+        text-align: center;
+        color: white;
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stake-gems">
+      <div class="gem"></div>
+      <div class="gem"></div>
+      <div class="gem"></div>
+      <div class="gem"></div>
+      <div class="gem"></div>
+    </div>
+    <div class="description">
+      <h2>Stake Gems</h2>
+      <p>Click any gem to stake it for gameplay!</p>
+    </div>
+
+    <script>
+      // Simple interaction to simulate staking
+      const gems = document.querySelectorAll(".gem");
+      gems.forEach((gem) => {
+        gem.addEventListener("click", () => {
+          gem.style.backgroundColor =
+            "linear-gradient(135deg, #4a90e2, #87cefa)";
+          setTimeout(() => {
+            gem.style.backgroundColor =
+              "linear-gradient(135deg, #ff9e80, #ff4d4f)";
+          }, 1500);
+        });
+      });
+    </script>
+  </body>
+</html>

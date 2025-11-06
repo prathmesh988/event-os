@@ -82,22 +82,43 @@ export const EVENTS: EventItem[] = [
   },
 ];
 
-// Utility functions for 3D carousel
-export function calculateCardStyle(
+// 2D carousel with individual card positioning
+export function calculate2DCardStyle(
   index: number,
   activeIndex: number,
-  totalCards: number,
-  radius: number = 400
+  cardWidth: number = 320, // Card width including spacing
+  containerWidth: number = 1200 // Container width
 ) {
-  const angle = ((index - activeIndex) * 360) / totalCards;
   const isActive = index === activeIndex;
-  const distance = isActive ? 0 : radius;
-  const scale = isActive ? 1.2 : 0.8;
+  const distanceFromCenter = index - activeIndex;
+
+  // Calculate the position for each card
+  const centerX = containerWidth / 2;
+  const cardX = centerX + distanceFromCenter * cardWidth - 280 / 2; // 280 is card width
+
+  // Simple scale and opacity for 2D carousel
+  const scale = isActive ? 1.0 : 0.75;
+  const opacity = isActive
+    ? 1
+    : Math.max(0.6, 0.9 - Math.abs(distanceFromCenter) * 0.1);
+
+  // Light blur for non-active cards
+  const blur = isActive ? 0 : 1.5;
+
+  // Simple z-index layering
+  const zIndex = isActive ? 10 : Math.max(5 - Math.abs(distanceFromCenter), 1);
 
   return {
-    transform: `rotateY(${angle}deg) translateZ(${distance}px) scale(${scale})`,
-    opacity: isActive ? 1 : 0.4,
-    zIndex: isActive ? 10 : 5 - Math.abs(index - activeIndex),
+    position: "absolute" as const,
+    left: `${cardX}px`,
+    top: "50%",
+    transform: `translateY(-50%) scale(${scale})`,
+    opacity,
+    zIndex,
+    filter: `blur(${blur}px)`,
+    transition: "all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)", // Smooth transitions
+    width: "280px",
+    height: "360px",
   };
 }
 

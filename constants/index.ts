@@ -4,6 +4,7 @@
  */
 
 export * from "./theme";
+export * from "./content";
 
 // Re-export commonly used constants for convenience
 export {
@@ -19,3 +20,20 @@ export {
   iconSizes,
   theme,
 } from "./theme";
+
+export {
+  siteInfo,
+  navigation,
+  hero,
+  bookingHero,
+  events,
+  packages,
+  booking,
+  testimonials,
+  gallery,
+  contact,
+  footer,
+  seo,
+  messages,
+  tracking,
+} from "./content";

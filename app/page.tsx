@@ -9,7 +9,7 @@ import { ContactMap } from "@/components/section-components/contact/contact-map"
 import { FloatingWhatsApp } from "@/components/shared/floating-whatsapp";
 import { DashboardPreview } from "@/components/section-components/dashboard/dashboard-preview";
 import { BookingCalendar } from "@/components/section-components/booking/booking-calendar";
-import { BookingCalendarHero } from "@/components/section-components/booking/booking-calendar-hero";
+import { AboutUsHero } from "@/components/section-components/booking/booking-calendar-hero";
 import { TopBar } from "@/components/section-components/navigation/top-bar";
 import { EnhancedWaveTransition } from "@/components/shared/enhanced-wave-transition";
 import FixedVideoBackground from "@/components/shared/fixed-video-background";
@@ -31,70 +31,74 @@ export default function Page() {
       <ScrollElement name="hero" className="relative z-10">
         <Hero />
       </ScrollElement>
+      <div>
+        {/* About Us Section */}
+        <div className="relative z-10">
+          <AboutUsHero />
+        </div>
 
-      {/* Main Featured Section */}
-      <div className="relative z-10">
-        <BookingCalendarHero />
+        {/* Events Section with improved spacing */}
+        <ScrollElement
+          name="events"
+          className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
+        >
+          <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
+            <div className={components.sectionHeader.container}>
+              <h2 className={components.sectionHeader.title}>
+                Our Amazing Events
+              </h2>
+              <p className={components.sectionHeader.description}>
+                Discover the magic we create
+              </p>
+            </div>
+            <EventsGrid />
+          </div>
+        </ScrollElement>
+
+        {/* Packages Section with improved spacing */}
+        <ScrollElement
+          name="packages"
+          className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
+        >
+          <div
+            className={`container mx-auto ${responsiveSpacing.containerX} w-full`}
+          >
+            <div className={components.sectionHeader.container}>
+              <h2 className={components.sectionHeader.title}>Event Packages</h2>
+              <p className={components.sectionHeader.description}>
+                Perfect plans for every celebration
+              </p>
+            </div>
+            <div className="w-full">
+              <Packages />
+            </div>
+          </div>
+        </ScrollElement>
+
+        {/* Booking Section with improved spacing */}
+        <ScrollElement
+          name="booking"
+          className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
+        >
+          <div
+            className={` flex container mx-auto ${responsiveSpacing.containerX}`}
+          >
+            <div
+              className={components.sectionHeader.container + ` self-center`}
+            >
+              <h2 className={components.sectionHeader.title}>
+                Book Your Event
+              </h2>
+              <p className={components.sectionHeader.description}>
+                Let's make your dream event reality
+              </p>
+            </div>
+            <div className={`${containers.xl} mx-auto`}>
+              <BookingForm />
+            </div>
+          </div>
+        </ScrollElement>
       </div>
-
-      {/* Events Section with improved spacing */}
-      <ScrollElement
-        name="events"
-        className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
-      >
-        <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
-          <div className={components.sectionHeader.container}>
-            <h2 className={components.sectionHeader.title}>
-              Our Amazing Events
-            </h2>
-            <p className={components.sectionHeader.description}>
-              Discover the magic we create
-            </p>
-          </div>
-          <EventsGrid />
-        </div>
-      </ScrollElement>
-
-      {/* Packages Section with improved spacing */}
-      <ScrollElement
-        name="packages"
-        className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
-      >
-        <div
-          className={`container mx-auto ${responsiveSpacing.containerX} w-full`}
-        >
-          <div className={components.sectionHeader.container}>
-            <h2 className={components.sectionHeader.title}>Event Packages</h2>
-            <p className={components.sectionHeader.description}>
-              Perfect plans for every celebration
-            </p>
-          </div>
-          <div className="w-full">
-            <Packages />
-          </div>
-        </div>
-      </ScrollElement>
-
-      {/* Booking Section with improved spacing */}
-      <ScrollElement
-        name="booking"
-        className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
-      >
-        <div
-          className={` flex container mx-auto ${responsiveSpacing.containerX}`}
-        >
-          <div className={components.sectionHeader.container + ` self-center`}>
-            <h2 className={components.sectionHeader.title}>Book Your Event</h2>
-            <p className={components.sectionHeader.description}>
-              Let's make your dream event reality
-            </p>
-          </div>
-          <div className={`${containers.xl} mx-auto`}>
-            <BookingForm />
-          </div>
-        </div>
-      </ScrollElement>
-
       {/* Wave Transition */}
       <EnhancedWaveTransition />
 
@@ -158,7 +162,7 @@ export default function Page() {
       </ScrollElement>
 
       {/* Dashboard Section with improved spacing */}
-      <ScrollElement
+      {/* <ScrollElement
         name="dashboard"
         className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
       >
@@ -171,12 +175,12 @@ export default function Page() {
           </div>
           <DashboardPreview />
         </div>
-      </ScrollElement>
+      </ScrollElement> */}
 
       {/* Contact Section with improved spacing */}
       <ScrollElement
         name="contact"
-        className={`relative z-10 bg-muted/50 ${responsiveSpacing.sectionY}`}
+        className={`relative z-10 bg-background ${responsiveSpacing.sectionY}`}
       >
         <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
           <div className={components.sectionHeader.container}>

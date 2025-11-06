@@ -1,9 +1,11 @@
+import { booking } from "@/constants";
+
 interface BookingSectionHeaderProps {
   title?: string;
 }
 
 export function BookingSectionHeader({
-  title = "Booking & Availability",
+  title = booking.title,
 }: BookingSectionHeaderProps) {
   return (
     <div className="mb-4">

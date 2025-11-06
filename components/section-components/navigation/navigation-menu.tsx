@@ -3,22 +3,13 @@
 import { useState } from "react";
 import { scroller } from "react-scroll";
 import { Button } from "@/components/shared/ui/button";
-import { gaps } from "@/constants";
+import { gaps, navigation } from "@/constants";
 
 interface NavMenuItem {
   label: string;
   href: string;
   id: string;
 }
-
-const navigationItems: NavMenuItem[] = [
-  { label: "Home", href: "#hero", id: "hero" },
-  { label: "Events", href: "#events", id: "events" },
-  { label: "Packages", href: "#packages", id: "packages" },
-  { label: "Booking", href: "#booking", id: "booking" },
-  { label: "Gallery", href: "#gallery", id: "gallery" },
-  { label: "Contact", href: "#contact", id: "contact" },
-];
 
 interface NavigationMenuProps {
   isMobile?: boolean;
@@ -60,7 +51,7 @@ export function NavigationMenu({
           : `hidden lg:flex items-center ${gaps.element.tight}`
       }`}
     >
-      {navigationItems.map((item) => (
+      {navigation.items.map((item) => (
         <Button
           key={item.id}
           variant="ghost"

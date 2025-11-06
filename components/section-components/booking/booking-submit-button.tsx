@@ -1,4 +1,5 @@
 import { Button } from "@/components/shared/ui/button";
+import { booking } from "@/constants";
 
 interface BookingSubmitButtonProps {
   loading: boolean;
@@ -13,7 +14,7 @@ export function BookingSubmitButton({ loading }: BookingSubmitButtonProps) {
         className="w-full bg-primary text-primary-foreground hover:opacity-90"
         aria-busy={loading}
       >
-        {loading ? "Submitting..." : "Submit Inquiry"}
+        {loading ? booking.form.submit.loading : booking.form.submit.text}
       </Button>
     </div>
   );

@@ -1,11 +1,11 @@
-import { typography, responsiveSpacing } from "@/constants";
+import { typography, responsiveSpacing, events } from "@/constants";
 
 interface EventsSectionHeaderProps {
   title?: string;
 }
 
 export function EventsSectionHeader({
-  title = "Recent Events",
+  title = events.title,
 }: EventsSectionHeaderProps) {
   return (
     <div className={responsiveSpacing.headerMargin}>
