@@ -7,32 +7,44 @@ import { Star, Quote } from "lucide-react";
 
 const TESTIMONIALS = [
   {
-    quote: "They made our wedding unforgettable — everything was seamless!",
-    author: "Riya & Karan",
-    location: "Delhi",
+    quote:
+      "Golden Hour Events consistently delivers exceptional wedding celebrations at our venue. Their attention to detail and professional coordination makes every event memorable.",
+    author: "JW MARRIOT",
+    location: "Premium Hotel Partner",
     rating: 5,
-    event: "Wedding",
+    event: "Wedding Events",
   },
   {
-    quote: "Flawless corporate summit. Our attendees loved the experience.",
-    author: "A. Mehra",
-    location: "CTO, Tech Corp",
+    quote:
+      "Professional, reliable, and creative. Golden Hour Events handles corporate conferences and events flawlessly at our property. Their team's vendor management is impressive.",
+    author: "ITC GARDENIA",
+    location: "Luxury Hotel Partner",
     rating: 5,
     event: "Corporate Event",
   },
   {
-    quote: "Professional, creative, and on time. Highly recommended!",
-    author: "N. Singh",
-    location: "Mumbai",
+    quote:
+      "Golden Hour Events transforms our venues into magical experiences. Their lighting, decor, and coordination excellence makes every celebration unforgettable.",
+    author: "SHANGRI-LA",
+    location: "Elite Hotel Partner",
     rating: 5,
     event: "Birthday Party",
   },
   {
-    quote: "Outstanding service and attention to detail. Perfect execution!",
-    author: "S. Sharma",
-    location: "Bangalore",
+    quote:
+      "Golden Hour Events brings exceptional event management to our boutique property. Every arrangement from decor to catering coordination is handled with perfection.",
+    author: "CHAMARA VAJRA",
+    location: "Boutique Hotel Partner",
     rating: 5,
     event: "Anniversary",
+  },
+  {
+    quote:
+      "Outstanding event management across our properties. Golden Hour Events handles everything professionally - from lighting setups to complete vendor coordination.",
+    author: "CHANCERY HOTELS",
+    location: "Hotel Chain Partner",
+    rating: 5,
+    event: "All Events",
   },
 ];
 

@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { Hero } from "@/components/section-components/hero/hero";
 import { EventsGrid } from "@/components/section-components/events/events-grid";
 import { Packages } from "@/components/section-components/packages/packages";
+import { Services } from "@/components/section-components/services/services";
 import { BookingForm } from "@/components/section-components/booking/booking-form";
 import { Testimonials } from "@/components/section-components/testimonials/testimonials";
 import { InstagramFeed } from "@/components/section-components/gallery/instagram-feed";
@@ -72,6 +73,22 @@ export default function Page() {
             <div className="w-full">
               <Packages />
             </div>
+          </div>
+        </ScrollElement>
+
+        {/* Services Section with improved spacing */}
+        <ScrollElement
+          name="services"
+          className={`relative z-10 bg-muted/20 ${responsiveSpacing.sectionY}`}
+        >
+          <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
+            <div className={components.sectionHeader.container}>
+              <h2 className={components.sectionHeader.title}>Our Services</h2>
+              <p className={components.sectionHeader.description}>
+                Complete event solutions under one roof
+              </p>
+            </div>
+            <Services />
           </div>
         </ScrollElement>
 

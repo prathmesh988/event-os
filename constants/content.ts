@@ -9,10 +9,11 @@
  */
 export const siteInfo = {
   name: "Golden Hour Events",
-  tagline: "Urban Events",
-  description: "Professional event planning that brings your vision to life",
+  tagline: "Where Unforgettable Events Come to Life",
+  description:
+    "Seasoned event organizer crafting bespoke events that exceed expectations",
   longDescription:
-    "From intimate gatherings to grand celebrations, we create unforgettable moments",
+    "From intimate gatherings to grand celebrations, we create unforgettable experiences that leave a lasting impression with exceptional service, creativity, and expertise",
   version: "0.1.0",
   platform: "Next.js 15",
   runtime: "React 19",
@@ -27,6 +28,7 @@ export const navigation = {
     { label: "Home", href: "#hero", id: "hero" },
     { label: "Events", href: "#events", id: "events" },
     { label: "Packages", href: "#packages", id: "packages" },
+    { label: "Services", href: "#services", id: "services" },
     { label: "Booking", href: "#booking", id: "booking" },
     { label: "Gallery", href: "#gallery", id: "gallery" },
     { label: "Contact", href: "#contact", id: "contact" },
@@ -41,10 +43,10 @@ export const navigation = {
  * HERO SECTION
  */
 export const hero = {
-  badge: "✨ Premium Event Planning & Design",
-  title: "Turn Your Dream Events into Reality",
+  badge: "✨ Where Unforgettable Events Come to Life",
+  title: "Welcome to Golden Hour Events",
   subtitle:
-    "Book your next event in just 3 clicks – seamless planning from venue to vendors with personalized design and flawless execution.",
+    "As a seasoned event organizer, we craft bespoke events that exceed expectations. With a keen eye for detail and deep understanding of what makes an event truly special, we work closely with you to bring your vision to life.",
   titleGradient: "Events",
   cta: {
     primary: "Book Your Event",
@@ -55,7 +57,7 @@ export const hero = {
   trustIndicators: [
     {
       icon: "⭐⭐⭐⭐⭐",
-      text: "500+ Happy Clients",
+      text: "Premium Hotel Partners",
     },
     {
       icon: "🏆",
@@ -63,7 +65,7 @@ export const hero = {
     },
     {
       icon: "📍",
-      text: "Pan India Service",
+      text: "Bangalore & Beyond",
     },
   ],
   stats: [
@@ -136,7 +138,7 @@ export const events = {
   title: "Our Amazing Events",
   subtitle: "Discover the magic we create",
   description:
-    "From intimate celebrations to grand corporate events, we bring your vision to life",
+    "We specialize in Weddings, Haldi ceremonies, Receptions, Birthday parties, Bridal showers, Baby showers, Corporate events, Inaugurations, Naming & House warming ceremonies, Retail show windows & more!",
   categories: {
     all: "All Events",
     wedding: "Wedding",
@@ -149,23 +151,45 @@ export const events = {
  * PACKAGES SECTION
  */
 export const packages = {
-  title: "Event Packages",
-  subtitle: "Perfect plans for every celebration",
+  title: "Our Services",
+  subtitle: "Complete event solutions under one roof",
   description:
-    "Choose from our curated packages or let us create something custom for you",
+    "From planning to execution, we provide comprehensive services to make your event memorable and stress-free",
   items: [
     {
-      title: "Wedding Management",
-      services: ["Venue Decor", "Catering", "Photography", "Guest Management"],
+      title: "Production & Setup",
+      services: [
+        "Lighting & Production",
+        "Furniture Rentals",
+        "DJ Services",
+        "Vendor Management",
+      ],
     },
     {
-      title: "Corporate Events",
-      services: ["Venue Booking", "AV & Stage", "Catering", "Logistics"],
+      title: "Creative Services",
+      services: [
+        "Photography",
+        "Mehendi Artists",
+        "Make-up Artists",
+        "Tattoo Artists",
+      ],
     },
     {
-      title: "Birthday Parties",
-      services: ["Theme Decor", "Cakes & Snacks", "Games", "Photography"],
+      title: "Celebration Essentials",
+      services: [
+        "Wedding Invites",
+        "Dhol Services",
+        "Event Planning",
+        "Custom Decor",
+      ],
     },
+  ],
+  partnerHotels: [
+    "JW Marriott",
+    "ITC Gardenia",
+    "Shangri-La",
+    "Chamara Vajra",
+    "Chancery Hotels",
   ],
   cta: {
     text: "Get Quote",
@@ -270,27 +294,41 @@ export const testimonials = {
   title: "What Our Clients Say",
   subtitle: "Real stories from real celebrations",
   description:
-    "Don't just take our word for it - hear from couples and companies who trusted us with their special moments",
+    "Don't just take our word for it - hear from couples and companies who trusted us with their special moments at premium venues",
   items: [
     {
-      name: "Priya & Arjun",
-      role: "Wedding Couple",
+      name: "JW MARRIOT",
+      role: "Premium Hotel Partner",
       content:
-        "Golden Hour Events made our dream wedding come true! Every detail was perfect, from the mandap decoration to the reception setup. Highly recommended!",
+        "Golden Hour Events consistently delivers exceptional wedding celebrations at our venue. Their attention to detail and professional coordination makes every event memorable. Highly recommended partner!",
       rating: 5,
     },
     {
-      name: "Rohit Sharma",
-      role: "Corporate Event Manager",
+      name: "ITC GARDENIA",
+      role: "Luxury Hotel Partner",
       content:
-        "Professional, reliable, and creative. They handled our annual conference flawlessly. The team's attention to detail is impressive.",
+        "Professional, reliable, and creative. Golden Hour Events handles corporate conferences and events flawlessly at our property. Their team's vendor management is impressive.",
       rating: 5,
     },
     {
-      name: "Sneha Patel",
-      role: "Birthday Celebration",
+      name: "SHANGRI-LA",
+      role: "Elite Hotel Partner",
       content:
-        "They turned my daughter's birthday party into a magical experience. The theme decoration and coordination were excellent!",
+        "Golden Hour Events transforms our venues into magical experiences. Their lighting, decor, and coordination excellence makes every celebration unforgettable. Outstanding partnership!",
+      rating: 5,
+    },
+    {
+      name: "CHAMARA VAJRA",
+      role: "Boutique Hotel Partner",
+      content:
+        "Golden Hour Events brings exceptional event management to our boutique property. Every arrangement from decor to catering coordination is handled with perfection. Excellent collaboration!",
+      rating: 5,
+    },
+    {
+      name: "CHANCERY HOTELS",
+      role: "Hotel Chain Partner",
+      content:
+        "Outstanding event management across our properties. Golden Hour Events handles everything professionally - from lighting setups to complete vendor coordination. Trusted partner for all events!",
       rating: 5,
     },
   ],
@@ -366,10 +404,33 @@ export const footer = {
   },
   links: {
     services: [
-      "Wedding Planning",
-      "Corporate Events",
+      "Lighting & Production",
+      "Furniture Rentals",
+      "DJ Services",
+      "Photography",
+      "Wedding Invites",
+      "Vendor Management",
+      "Dhol Services",
+      "Mehendi Artists",
+      "Make-up Artists",
+      "Tattoo Artists",
+    ],
+    events: [
+      "Weddings",
+      "Haldi Ceremonies",
+      "Receptions",
       "Birthday Parties",
-      "Anniversary Celebrations",
+      "Bridal Showers",
+      "Baby Showers",
+      "Corporate Events",
+      "Inaugurations",
+    ],
+    partners: [
+      "JW Marriott",
+      "ITC Gardenia",
+      "Shangri-La",
+      "Chamara Vajra",
+      "Chancery Hotels",
     ],
     company: ["About Us", "Our Team", "Portfolio", "Contact"],
     support: [
@@ -385,14 +446,22 @@ export const footer = {
  * SEO & META
  */
 export const seo = {
-  title: "Golden Hour Events - Premier Event Planning in Bangalore",
+  title:
+    "Golden Hour Events - Premier Event Planning in Bangalore | JW Marriott, ITC Gardenia Partner",
   description:
-    "Professional event planning services in Bangalore. Weddings, corporate events, birthday parties & more. Book your dream event today!",
+    "Professional event planning services in Bangalore. Weddings, corporate events, birthday parties at premium venues like JW Marriott, ITC Gardenia, Shangri-La. Complete services: lighting, photography, DJ, makeup artists & more!",
   keywords: [
     "event planning bangalore",
     "wedding planner bangalore",
     "corporate events bangalore",
-    "birthday party organizer",
+    "JW Marriott events",
+    "ITC Gardenia events",
+    "Shangri-La events",
+    "lighting production bangalore",
+    "DJ services bangalore",
+    "photography bangalore",
+    "makeup artists bangalore",
+    "mehendi artists bangalore",
     "event management karnataka",
   ],
   openGraph: {

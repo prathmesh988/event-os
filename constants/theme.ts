@@ -381,7 +381,7 @@ export const components = {
   sectionHeader: {
     container: `text-center ${responsiveSpacing.headerMargin} ${responsiveSpacing.contentGap}`,
     title: `${typography.heading.h1} ${typography.weight.bold}`,
-    description: `${typography.body.lg} text-muted-foreground ${containers.md} mx-auto`,
+    description: `${typography.body.lg} text-foreground/80 ${containers.md} mx-auto`,
   },
 } as const;
 

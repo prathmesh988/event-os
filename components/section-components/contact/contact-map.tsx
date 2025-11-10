@@ -64,25 +64,6 @@ export function ContactMap() {
 
                 <div className="flex items-start gap-3">
                   <div className="p-2 rounded-lg bg-primary/10">
-                    <Mail className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p
-                      className={`${typography.body.sm} font-medium text-foreground`}
-                    >
-                      {contact.info.email.label}
-                    </p>
-                    <a
-                      href={contact.info.email.href}
-                      className={`${typography.body.sm} text-primary hover:underline`}
-                    >
-                      {contact.info.email.value}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="p-2 rounded-lg bg-primary/10">
                     <Clock className="w-5 h-5 text-primary" />
                   </div>
                   <div>
@@ -287,19 +268,7 @@ export function ContactMap() {
                   {contact.info.phone.value}
                 </a>
               </div>
-              <div>
-                <p
-                  className={`${typography.body.xs} text-muted-foreground mb-1`}
-                >
-                  Email
-                </p>
-                <a
-                  href={contact.info.email.href}
-                  className={`${typography.body.sm} text-foreground hover:text-primary`}
-                >
-                  {contact.info.email.value}
-                </a>
-              </div>
+
               <div>
                 <p
                   className={`${typography.body.xs} text-muted-foreground mb-1`}
@@ -307,7 +276,7 @@ export function ContactMap() {
                   Location
                 </p>
                 <p className={`${typography.body.sm} text-foreground`}>
-                  Pune, Maharashtra
+                  M G Road, Bangalore
                 </p>
               </div>
             </div>
