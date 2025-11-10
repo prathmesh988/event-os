@@ -2,7 +2,8 @@
 
 import { Card, CardContent } from "@/components/shared/ui/card";
 import { Button } from "@/components/shared/ui/button";
-import { gaps, typography, contact, siteInfo, navigation } from "@/constants";
+import { gaps, typography, contact, navigation, siteInfo } from "@/constants";
+import { useAdminStore } from "@/store/admin-store";
 import {
   Phone,
   Mail,
@@ -20,6 +21,9 @@ export function ContactMap() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const site = useAdminStore((s) => s.site);
+  const adminContact = useAdminStore((s) => s.contact);
 
   return (
     <div className="space-y-12">
@@ -51,13 +55,18 @@ export function ContactMap() {
                     <p
                       className={`${typography.body.sm} font-medium text-foreground`}
                     >
-                      {contact.info.phone.label}
+                      {adminContact?.info?.phone?.label ||
+                        contact.info.phone.label}
                     </p>
                     <a
-                      href={contact.info.phone.href}
+                      href={
+                        adminContact?.info?.phone?.href ||
+                        contact.info.phone.href
+                      }
                       className={`${typography.body.sm} text-primary hover:underline`}
                     >
-                      {contact.info.phone.value}
+                      {adminContact?.info?.phone?.value ||
+                        contact.info.phone.value}
                     </a>
                   </div>
                 </div>
@@ -88,12 +97,14 @@ export function ContactMap() {
                     <p
                       className={`${typography.body.sm} font-medium text-foreground mb-1`}
                     >
-                      {contact.info.address.label}
+                      {adminContact?.info?.address?.label ||
+                        contact.info.address.label}
                     </p>
                     <p
                       className={`${typography.body.xs} text-muted-foreground leading-relaxed`}
                     >
-                      Pune, Maharashtra 411052
+                      {adminContact?.info?.address?.value ||
+                        contact.info.address.value}
                     </p>
                   </div>
                 </div>
@@ -144,12 +155,12 @@ export function ContactMap() {
           <div className="space-y-4">
             <div>
               <h4 className={`${typography.heading.h4} mb-2`}>
-                {siteInfo.name}
+                {site?.name || siteInfo.name}
               </h4>
               <p
                 className={`${typography.body.sm} text-muted-foreground leading-relaxed`}
               >
-                {siteInfo.longDescription}
+                {site?.description || siteInfo.longDescription}
               </p>
             </div>
 
@@ -262,10 +273,12 @@ export function ContactMap() {
                   Phone
                 </p>
                 <a
-                  href={contact.info.phone.href}
+                  href={
+                    adminContact?.info?.phone?.href || contact.info.phone.href
+                  }
                   className={`${typography.body.sm} text-foreground hover:text-primary`}
                 >
-                  {contact.info.phone.value}
+                  {adminContact?.info?.phone?.value || contact.info.phone.value}
                 </a>
               </div>
 
@@ -276,7 +289,8 @@ export function ContactMap() {
                   Location
                 </p>
                 <p className={`${typography.body.sm} text-foreground`}>
-                  M G Road, Bangalore
+                  {adminContact?.info?.address?.value ||
+                    contact.info.address.value}
                 </p>
               </div>
             </div>
@@ -288,7 +302,8 @@ export function ContactMap() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
               <p className={`${typography.body.sm} text-muted-foreground`}>
-                © 2025 {siteInfo.name}. Made with
+                © {new Date().getFullYear()} {site?.name || siteInfo.name}. Made
+                with
               </p>
               <Heart className="w-4 h-4 text-red-500 fill-red-500" />
               <p className={`${typography.body.sm} text-muted-foreground`}>

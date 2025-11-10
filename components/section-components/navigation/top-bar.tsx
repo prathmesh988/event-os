@@ -13,12 +13,14 @@ import {
   gaps,
   typography,
   responsiveSpacing,
-  siteInfo,
   navigation,
+  siteInfo,
 } from "@/constants";
+import { useAdminStore } from "@/store/admin-store";
 
 export function TopBar() {
   const { scrollDirection, isScrolled } = useScrollDirection();
+  const site = useAdminStore((s) => s.site);
 
   return (
     <div
@@ -52,7 +54,7 @@ export function TopBar() {
                 <span
                   className={`${typography.body.lg} ${typography.weight.bold} bg-gradient-to-r from-primary via-primary/90 to-primary/80 bg-clip-text text-transparent`}
                 >
-                  {siteInfo.name}
+                  {site?.name || siteInfo.name}
                 </span>
                 <Sparkles
                   className={`${iconSizes.responsive.sm} text-primary opacity-70 group-hover:opacity-100 transition-opacity`}

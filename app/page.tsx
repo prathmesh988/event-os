@@ -15,6 +15,7 @@ import { TopBar } from "@/components/section-components/navigation/top-bar";
 import { EnhancedWaveTransition } from "@/components/shared/enhanced-wave-transition";
 import FixedVideoBackground from "@/components/shared/fixed-video-background";
 import { responsiveSpacing, components, containers } from "@/constants";
+import { SectionHeader } from "@/components/shared/section-header";
 import { ScrollElement } from "@/components/section-components/scroll-wrapper";
 
 export default function Page() {
@@ -45,12 +46,11 @@ export default function Page() {
         >
           <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
             <div className={components.sectionHeader.container}>
-              <h2 className={components.sectionHeader.title}>
-                Our Amazing Events
-              </h2>
-              <p className={components.sectionHeader.description}>
-                Discover the magic we create
-              </p>
+              <SectionHeader
+                sectionKey="events"
+                titleFallback="Our Amazing Events"
+                descFallback="Discover the magic we create"
+              />
             </div>
             <EventsGrid />
           </div>
@@ -65,10 +65,11 @@ export default function Page() {
             className={`container mx-auto ${responsiveSpacing.containerX} w-full`}
           >
             <div className={components.sectionHeader.container}>
-              <h2 className={components.sectionHeader.title}>Event Packages</h2>
-              <p className={components.sectionHeader.description}>
-                Perfect plans for every celebration
-              </p>
+              <SectionHeader
+                sectionKey="packages"
+                titleFallback="Event Packages"
+                descFallback="Perfect plans for every celebration"
+              />
             </div>
             <div className="w-full">
               <Packages />
@@ -83,10 +84,11 @@ export default function Page() {
         >
           <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
             <div className={components.sectionHeader.container}>
-              <h2 className={components.sectionHeader.title}>Our Services</h2>
-              <p className={components.sectionHeader.description}>
-                Complete event solutions under one roof
-              </p>
+              <SectionHeader
+                sectionKey="services"
+                titleFallback="Our Services"
+                descFallback="Complete event solutions under one roof"
+              />
             </div>
             <Services />
           </div>
@@ -103,12 +105,11 @@ export default function Page() {
             <div
               className={components.sectionHeader.container + ` self-center`}
             >
-              <h2 className={components.sectionHeader.title}>
-                Book Your Event
-              </h2>
-              <p className={components.sectionHeader.description}>
-                Let's make your dream event reality
-              </p>
+              <SectionHeader
+                sectionKey="booking"
+                titleFallback="Book Your Event"
+                descFallback="Let's make your dream event reality"
+              />
             </div>
             <div className={`${containers.xl} mx-auto`}>
               <BookingForm />
@@ -128,12 +129,11 @@ export default function Page() {
           className={`relative z-10 container mx-auto ${responsiveSpacing.containerX}`}
         >
           <div className={components.sectionHeader.container}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg">
-              Check Availability
-            </h2>
-            <p className="text-lg md:text-xl text-white/90 drop-shadow-md max-w-2xl mx-auto">
-              Find your perfect date
-            </p>
+            <SectionHeader
+              sectionKey="calendar"
+              titleFallback={"Check Availability"}
+              descFallback={"Find your perfect date"}
+            />
           </div>
           <BookingCalendar />
         </div>
@@ -146,10 +146,11 @@ export default function Page() {
       >
         <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
           <div className={components.sectionHeader.container}>
-            <h2 className={components.sectionHeader.title}>Happy Clients</h2>
-            <p className={components.sectionHeader.description}>
-              What our customers say about us
-            </p>
+            <SectionHeader
+              sectionKey="testimonials"
+              titleFallback="Happy Clients"
+              descFallback="What our customers say about us"
+            />
           </div>
           <Testimonials />
         </div>
@@ -165,12 +166,11 @@ export default function Page() {
           className={`relative z-10 container mx-auto ${responsiveSpacing.containerX}`}
         >
           <div className={components.sectionHeader.container}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg">
-              Event Gallery
-            </h2>
-            <p className="text-lg md:text-xl text-white/90 drop-shadow-md max-w-2xl mx-auto">
-              Moments that matter
-            </p>
+            <SectionHeader
+              sectionKey="gallery"
+              titleFallback="Event Gallery"
+              descFallback="Moments that matter"
+            />
           </div>
           <Suspense>
             <InstagramFeed />
@@ -201,10 +201,11 @@ export default function Page() {
       >
         <div className={`container mx-auto ${responsiveSpacing.containerX}`}>
           <div className={components.sectionHeader.container}>
-            <h2 className={components.sectionHeader.title}>Get In Touch</h2>
-            <p className={components.sectionHeader.description}>
-              Ready to plan your perfect event?
-            </p>
+            <SectionHeader
+              sectionKey="contact"
+              titleFallback="Get In Touch"
+              descFallback="Ready to plan your perfect event?"
+            />
           </div>
           <ContactMap />
         </div>

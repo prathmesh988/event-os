@@ -19,6 +19,7 @@ import {
   gaps,
   containers,
 } from "@/constants";
+import { useAdminStore } from "@/store/admin-store";
 
 const STATS = [
   {
@@ -67,6 +68,15 @@ const FEATURES = [
 ];
 
 export function AboutUsHero() {
+  const texts = useAdminStore((s) => s.texts);
+  const h1_line1 = texts["about.h1_line1"] || "Creating Magical";
+  const h1_highlight = texts["about.h1_highlight"] || "Moments";
+  const h2_subtitle =
+    texts["about.h2_subtitle"] || "Your Dream Event, Our Expertise";
+  const about_p =
+    texts["about.p"] ||
+    "We are passionate event planners dedicated to turning your vision into reality. With over a decade of experience in creating extraordinary celebrations, we specialize in weddings, corporate events, and special occasions that leave lasting impressions.";
+  const about_cta = texts["about.cta"] || "Start Planning Your Event";
   return (
     <section
       className={`relative min-h-screen bg-background flex items-center justify-center ${responsiveSpacing.sectionY} overflow-hidden ${responsiveSpacing.containerX}`}
@@ -86,10 +96,10 @@ export function AboutUsHero() {
             className={`${typography.display["2xl"]} ${typography.weight.black} tracking-tighter animate-fade-in drop-shadow-lg leading-tight ${responsiveSpacing.contentGap}`}
           >
             <span className="block transform hover:scale-105 transition-transform duration-700 ease-out">
-              Creating Magical
+              {h1_line1}
             </span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-pink-500 transform hover:scale-105 transition-transform duration-700 ease-out delay-100">
-              Moments
+              {h1_highlight}
             </span>
           </h1>
 
@@ -98,7 +108,7 @@ export function AboutUsHero() {
             <h2
               className={`${typography.heading.h2} ${typography.weight.bold} text-muted-foreground tracking-wide animate-bounce-in drop-shadow-md`}
             >
-              Your Dream Event, Our Expertise
+              {h2_subtitle}
             </h2>
 
             {/* Decorative element */}
@@ -126,11 +136,7 @@ export function AboutUsHero() {
               <p
                 className={`${typography.body.xl} text-muted-foreground ${typography.weight.light} leading-relaxed ${containers.lg} mx-auto`}
               >
-                We are passionate event planners dedicated to turning your
-                vision into reality. With over a decade of experience in
-                creating extraordinary celebrations, we specialize in weddings,
-                corporate events, and special occasions that leave lasting
-                impressions.
+                {about_p}
               </p>
             </div>
 
@@ -215,7 +221,7 @@ export function AboutUsHero() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
               <div className="relative flex items-center">
                 <Heart className={`${iconSizes.md} mr-3`} />
-                Start Planning Your Event
+                {about_cta}
               </div>
             </Button>
           </div>

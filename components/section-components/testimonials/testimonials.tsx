@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { Card, CardContent } from "@/components/shared/ui/card";
 import { gaps, typography, components, responsiveSpacing } from "@/constants";
+import { useAdminStore } from "@/store/admin-store";
 import { Star, Quote } from "lucide-react";
 
 const TESTIMONIALS = [
@@ -50,6 +51,8 @@ const TESTIMONIALS = [
 
 export function Testimonials() {
   const ref = useRef<HTMLDivElement>(null);
+  const adminTestimonials = useAdminStore((s) => s.testimonials);
+  const source = (adminTestimonials && adminTestimonials.length > 0 ? adminTestimonials : TESTIMONIALS) as typeof TESTIMONIALS;
 
   return (
     <div className="min-h-[70vh] flex flex-col justify-center">
@@ -58,7 +61,7 @@ export function Testimonials() {
         <div className="w-full">
           {/* Grid layout for larger screens, scroll for mobile */}
           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
-            {TESTIMONIALS.map((testimonial, idx) => (
+            {source.map((testimonial, idx) => (
               <TestimonialCard key={idx} testimonial={testimonial} />
             ))}
           </div>
@@ -69,7 +72,7 @@ export function Testimonials() {
             className={`md:hidden flex ${gaps.element.comfortable} overflow-x-auto snap-x snap-mandatory pb-4`}
             aria-label="Client testimonials"
           >
-            {TESTIMONIALS.map((testimonial, idx) => (
+            {source.map((testimonial, idx) => (
               <div key={idx} className="min-w-[280px] snap-center">
                 <TestimonialCard testimonial={testimonial} />
               </div>

@@ -13,10 +13,19 @@ import {
   containers,
   hero,
 } from "@/constants";
+import { useAdminStore } from "@/store/admin-store";
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [bookingOpen, setBookingOpen] = useState(false);
+  const texts = useAdminStore((s) => s.texts);
+
+  const badge = texts["hero.badge"] || hero.badge;
+  const titleGradient = texts["hero.titleGradient"] || hero.titleGradient;
+  const subtitleText = texts["hero.subtitle"] || hero.subtitle;
+  const ctaPrimary = texts["hero.cta.primary"] || hero.cta.primary;
+  const ctaSecondary = texts["hero.cta.secondary"] || hero.cta.secondary;
+  const whatsappMessage = texts["hero.whatsappMessage"] || hero.whatsappMessage;
 
   return (
     <header
@@ -42,7 +51,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="inline-flex items-center px-4 py-2 rounded-full bg-background/80 border border-border text-foreground text-sm font-medium mb-8 shadow-lg backdrop-blur-sm"
             >
-              {hero.badge}
+              {badge}
             </motion.div>
 
             {/* Main heading with enhanced typography */}
@@ -55,7 +64,7 @@ export function Hero() {
               Turn Your Dream
               <br />
               <span className="bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                {hero.titleGradient}
+                {titleGradient}
               </span>{" "}
               into Reality
             </motion.h1>
@@ -67,7 +76,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl md:text-2xl leading-relaxed text-white/80 mb-12 max-w-3xl mx-auto"
             >
-              {hero.subtitle}
+              {subtitleText}
             </motion.p>
 
             {/* Enhanced CTA buttons */}
@@ -82,12 +91,12 @@ export function Hero() {
                 size="lg"
                 className="group relative overflow-hidden bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white border-0 px-8 py-4 text-lg font-semibold rounded-full shadow-2xl hover:shadow-pink-500/25 transition-all duration-300"
               >
-                <span className="relative z-10">{hero.cta.primary}</span>
+                <span className="relative z-10">{ctaPrimary}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Button>
 
               <a
-                href={whatsappUrl(hero.whatsappMessage)}
+                href={whatsappUrl(whatsappMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chat on WhatsApp"
@@ -97,7 +106,7 @@ export function Hero() {
                   size="lg"
                   className="bg-background/80 border-border text-foreground hover:bg-background/90 px-8 py-4 text-lg font-semibold rounded-full backdrop-blur-lg transition-all duration-300 hover:scale-105 shadow-lg"
                 >
-                  {hero.cta.secondary}
+                  {ctaSecondary}
                 </Button>
               </a>
             </motion.div>
